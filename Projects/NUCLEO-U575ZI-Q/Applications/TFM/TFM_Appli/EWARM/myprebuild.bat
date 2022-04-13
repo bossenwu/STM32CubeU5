@@ -1,0 +1,1 @@
+prebuild_s.cmd ./. STM32U575xx
