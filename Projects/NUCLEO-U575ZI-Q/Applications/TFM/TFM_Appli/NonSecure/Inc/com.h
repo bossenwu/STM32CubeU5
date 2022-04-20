@@ -90,6 +90,7 @@ HAL_StatusTypeDef  COM_Y_On(uint8_t AbortChar);
 HAL_StatusTypeDef  COM_Y_Off(void);
 HAL_StatusTypeDef Ymodem_HeaderPktRxCpltCallback(uint32_t uFlashDestination, uint32_t uFileSize);
 HAL_StatusTypeDef Ymodem_DataPktRxCpltCallback(uint8_t *pData, uint32_t uFlashDestination, uint32_t uSize);
+uint8_t COM_Receive_NotEmpty(void);
 /**
   * @}
   */

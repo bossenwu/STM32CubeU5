@@ -197,6 +197,18 @@ void enable_ns_clk_config(void)
   /*  fix me : not implemented yet */
 
 }
+static void LED_Init(void)
+{
+  GPIO_InitTypeDef gpio;
+
+  gpio.Mode = GPIO_MODE_OUTPUT_PP;
+  gpio.Pull = GPIO_NOPULL;
+  gpio.Pin = GPIO_PIN_7;
+
+  HAL_GPIO_Init(GPIOB, &gpio);
+  HAL_GPIO_Init(GPIOC, &gpio);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+}
 /*----------------- GPIO Pin mux configuration for non secure --------------- */
 /*  set all pin mux to un-secure */
 #ifdef TFM_FIH_PROFILE_ON
@@ -213,14 +225,24 @@ void pinmux_init_cfg(void)
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
+
+/* Set PC7 - Green LED 
+ * and PB7 - BLUE LED 
+ * as secure I/O
+ * */
+
   GPIOA_S->SECCFGR = 0x0;
-  GPIOB_S->SECCFGR = 0x0;
-  GPIOC_S->SECCFGR = 0x0;
+  GPIOB_S->SECCFGR = GPIO_PIN_7;
+  GPIOC_S->SECCFGR = GPIO_PIN_7;
   GPIOD_S->SECCFGR = 0x0;
   GPIOE_S->SECCFGR = 0x0;
   GPIOF_S->SECCFGR = 0x0;
   GPIOG_S->SECCFGR = 0x0;
   GPIOH_S->SECCFGR = 0x0;
+
+  LED_Init();
+  // GPIOB_S->MODER |= GPIO_MODE_OUTPUT_PP << 14;
+  // GPIOC_S->MODER |= GPIO_MODE_OUTPUT_PP << 14;
 #ifdef TFM_FIH_PROFILE_ON
   FIH_RET(fih_int_encode(TFM_PLAT_ERR_SUCCESS));
 #endif 

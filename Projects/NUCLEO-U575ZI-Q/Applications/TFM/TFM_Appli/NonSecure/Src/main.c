@@ -34,6 +34,8 @@ __asm("  .global __ARM_use_no_argv\n");
 #include "fw_update_app.h"
 #include "tfm_app.h"
 #include "ns_data.h"
+#include "user_app.h"
+#include <yfuns.h>
 /** @defgroup  USER_APP  exported variable
    * @{
   */
@@ -60,12 +62,13 @@ volatile uint32_t TestNumber  __attribute__((section(".bss.NoInit"))) ;
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 uint8_t *pUserAppId;
-const uint8_t UserAppId = 'A';
+const uint8_t UserAppId = 'B';
 
 /* Private function prototypes -----------------------------------------------*/
 static void SystemClock_Config(void);
 void FW_APP_PrintMainMenu(void);
 void FW_APP_Run(void);
+
 static void uart_putc(unsigned char c)
 {
   COM_Transmit(&c, 1, 1000U);
@@ -107,6 +110,42 @@ int putchar(int ch)
 
   /* Return character written */
   return ch;
+}
+#pragma module_name = "?__read"
+
+int MyLowLevelGetchar(void);
+
+size_t __read(int handle, unsigned char * buffer, size_t size)
+{
+  int nChars = 0;
+
+  /* This template only reads from "standard in", for all other file
+   * handles it returns failure. */
+  if (handle != _LLIO_STDIN)
+  {
+    return _LLIO_ERROR;
+  }
+
+  for (/* Empty */; size > 0; --size)
+  {
+    int c = MyLowLevelGetchar();
+    if (c < 0)
+      break;
+
+    *buffer++ = c;
+    ++nChars;
+  }
+
+  return nChars;
+}
+
+int MyLowLevelGetchar(void)
+{
+    uint8_t ch;
+    while (COM_Receive_NotEmpty() == 0);
+
+    COM_Receive(&ch, 1, 0xFFF);
+    return (int)ch;
 }
 #endif /*  __GNUC__ */
 
@@ -250,6 +289,7 @@ void FW_APP_PrintMainMenu(void)
 #if (MCUBOOT_NS_DATA_IMAGE_NUMBER == 1)
   printf("  Non-Secure Data --------------------------------------- 4\r\n\n");
 #endif /* defined(MCUBOOT_NS_DATA_IMAGE_NUMBER) */
+  printf("  Test user app ----------------------------------------- 5\r\n\n");
   printf("  Selection :\r\n\n");
 }
 
@@ -291,6 +331,9 @@ void FW_APP_Run(void)
           NS_DATA_Run();
           break;
 #endif /* defined(MCUBOOT_NS_DATA_IMAGE_NUMBER) */
+        case '5' :
+          user_app_run();
+          break;
         default:
           printf("Invalid Number !\r");
           break;

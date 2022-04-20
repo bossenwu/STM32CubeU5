@@ -52,6 +52,7 @@ copy %TFM_TEST_PATH%\test_services\tfm_core_test\tfm_core_test %projectdir% /Y
 ::config platform customizeable
 copy %CONFIG%\tfm_app_rot.yaml %projectdir% /Y
 copy %CONFIG%\tfm_platform.yaml %projectdir% /Y
+copy %CONFIG%\tfm_user_app.yaml %projectdir% /Y
 dir %TOOLS% > %1\output.txt 2>&1
 #%python% %TOOLS%\dist\pyscript\tfm_parse_manifest_list.py -o %projectdir%\g -m %projectdir%\tfm_manifest_list.yaml -f %projectdir%\tfm_generated_file_list.yaml >> %1\output.txt 2>&1
 %TOOLS%\dist\tfm_parse_manifest_list\tfm_parse_manifest_list.exe -o %projectdir%\g -m %projectdir%\tfm_manifest_list.yaml -f %projectdir%\tfm_generated_file_list.yaml >> %1\output.txt 2>&1

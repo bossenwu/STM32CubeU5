@@ -45,7 +45,7 @@
 #define TFM_SECURE_USER_SRAM2_ERASE_AT_RESET /*!< SRAM2 clear at Reset  */
 
 #ifdef TFM_DEV_MODE
-#define TFM_OB_RDP_LEVEL_VALUE OB_RDP_LEVEL_1 /*!< RDP level */
+#define TFM_OB_RDP_LEVEL_VALUE OB_RDP_LEVEL_0 /*!< RDP level */
 #else
 #define TFM_OB_RDP_LEVEL_VALUE OB_RDP_LEVEL_2 /*!< RDP level */
 #endif /* TFM_DEV_MODE */

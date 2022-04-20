@@ -272,5 +272,21 @@
         ]
       }
     },
+    {
+      "name": "TFM User App",
+      "short_name": "TFM_USER_APP",
+      "manifest": "${projectdir}/tfm_user_app.yaml",
+      "source_path": "${projectdir}",
+      "tfm_partition_ipc": true,
+      "conditional": "TFM_PARTITION_USER_APP",
+      "version_major": 0,
+      "version_minor": 1,
+      "pid": 276,
+      "linker_pattern": {
+        "library_list": [
+          "*tfm_user_app.*"
+        ]
+      }
+    },
   ]
 }

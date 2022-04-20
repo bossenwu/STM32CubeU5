@@ -252,7 +252,6 @@
                     <state>FLOW_CONTROL</state>
                     <state>TFM_FIH_PROFILE_ON</state>
                     <state>TFM_FIH_PROFILE_HIGH</state>
-                    <state>STSAFE_A110</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -760,7 +759,7 @@
             <archiveVersion>1</archiveVersion>
             <data>
                 <prebuild>$PROJ_DIR$\prebuild_s.cmd "$PROJ_DIR$" "STM32U575xx"</prebuild>
-                <postbuild>cmd /C "cmd /C $PROJ_DIR$\postbuild.bat "$PROJ_DIR$"  "1.0.0" "secure""</postbuild>
+                <postbuild>cmd /C "cmd /C $PROJ_DIR$\postbuild.bat "$PROJ_DIR$"  "2.0.0" "secure""</postbuild>
             </data>
         </settings>
         <settings>
@@ -1250,6 +1249,9 @@
                 <name>$PROJ_DIR$\..\Secure\Src\tfm_platform_system.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\..\Secure\Src\tfm_user_app.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Secure\Src\tick.c</name>
             </file>
         </group>
@@ -1643,6 +1645,9 @@
                 </file>
                 <file>
                     <name>$PROJ_DIR$\g\auto_generated\intermedia_tfm_protected_storage.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\g\auto_generated\intermedia_tfm_user_app.c</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\Third_Party\trustedfirmware\secure_fw\partitions\internal_trusted_storage\flash\its_flash.c</name>
