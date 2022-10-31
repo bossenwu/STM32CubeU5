@@ -210,6 +210,17 @@ HAL_StatusTypeDef COM_Transmit_Y(uint8_t *Data, uint16_t uDataLength, uint32_t u
     return HAL_ERROR;
 }
 
+/**
+  * @brief Check UART RXNE flag.
+  * @retval Status of the RXNE flag.
+  */
+uint8_t COM_Receive_NotEmpty(void)
+{
+  if (HAL_UART_GetState(&UartHandle) & UART_FLAG_RXNE)
+    return 1;
+  else
+    return 0;
+}
 
 /**
   * @brief Receive Data.

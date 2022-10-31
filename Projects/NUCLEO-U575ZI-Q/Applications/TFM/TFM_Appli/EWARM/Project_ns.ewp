@@ -712,7 +712,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild>$PROJ_DIR$\prebuild_ns.cmd "$PROJ_DIR$" "STM32U575xx"</prebuild>
-        <postbuild>cmd /C "cmd /C $PROJ_DIR$\postbuild.bat "$PROJ_DIR$"  "1.0.0" "nonsecure""</postbuild>
+        <postbuild>cmd /C "cmd /C $PROJ_DIR$\postbuild.bat "$PROJ_DIR$"  "2.0.0" "nonsecure""</postbuild>
       </data>
     </settings>
     <settings>
@@ -1186,6 +1186,9 @@
     <name>Application</name>
     <group>
       <name>User</name>
+      <file>
+        <name>$PROJ_DIR$\..\NonSecure\Src\user_app.c</name>
+      </file>
       <file>
         <name>$PROJ_DIR$\..\NonSecure\Src\low_level_flash.c</name>
       </file>
