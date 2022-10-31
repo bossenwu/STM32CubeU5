@@ -26,6 +26,7 @@
 /* TFM Partition configuration : begin */
 
 #define TFM_PARTITION_APP_ROT        /* comment to remove APP_ROT partition */
+#define TFM_PARTITION_USER_APP       /* Add for User app partition */
 
 /*#define TFM_PARTITION_FIRMWARE_UPDATE*/  /* comment to remove TFM_PARTITION_FIRMWARE_UPDATE */
 
