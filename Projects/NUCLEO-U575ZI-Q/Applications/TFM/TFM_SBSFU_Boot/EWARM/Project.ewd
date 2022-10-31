@@ -2,7 +2,7 @@
 <project>
   <fileVersion>3</fileVersion>
   <configuration>
-    <name>B-U585I-IOT02A_TFM_SBSFU_Boot</name>
+    <name>NUCLEO-U575ZI-Q_TFM_SBSFU_Boot</name>
     <toolchain>
       <name>ARM</name>
     </toolchain>

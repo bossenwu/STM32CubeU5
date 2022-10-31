@@ -60,7 +60,7 @@ IF %errorlevel% NEQ 0 goto :error
 echo "TFM_Loader  Written"
 )
 echo "Write TFM_SBSFU_Boot"
-%stm32programmercli% %connect% -d %~dp0.\B-U585I-IOT02A\Exe\project.bin %boot% -v
+%stm32programmercli% %connect% -d %~dp0.\NUCLEO-U575ZI-Q\Exe\project.bin %boot% -v
 IF %errorlevel% NEQ 0 goto :error
 echo "TFM_SBSFU_Boot Written"
 echo "TFM_UPDATE script done, press a key"

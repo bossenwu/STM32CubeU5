@@ -30,7 +30,7 @@
 #define MBEDTLS_CONFIG_BOOT_H
 
 /* HW accelerators activation in BL2 */
-#define BL2_HW_ACCEL_ENABLE
+/* #define BL2_HW_ACCEL_ENABLE */
 #define MBEDTLS_ECP_NO_INTERNAL_RNG
 
 #ifdef CONFIG_MCUBOOT_SERIAL
