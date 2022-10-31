@@ -2,7 +2,7 @@
 <project>
   <fileVersion>3</fileVersion>
   <configuration>
-    <name>B-U585I-IOT02A_TFM_Loader_NS</name>
+    <name>NUCLEO-U575ZI-Q_TFM_Loader_NS</name>
     <toolchain>
       <name>ARM</name>
     </toolchain>
