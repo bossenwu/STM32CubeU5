@@ -2,7 +2,7 @@
 <project>
   <fileVersion>3</fileVersion>
   <configuration>
-    <name>B-U585I-IOT02A_TFM_Appli_S</name>
+    <name>NUCLEO-U575ZI-Q_TFM_Appli_S</name>
     <toolchain>
       <name>ARM</name>
     </toolchain>
@@ -20,15 +20,15 @@
         </option>
         <option>
           <name>ExePath</name>
-          <state>B-U585I-IOT02A_S/Exe</state>
+          <state>NUCLEO-U575ZI-Q_S/Exe</state>
         </option>
         <option>
           <name>ObjPath</name>
-          <state>B-U585I-IOT02A_S/Obj</state>
+          <state>NUCLEO-U575ZI-Q_S/Obj</state>
         </option>
         <option>
           <name>ListPath</name>
-          <state>B-U585I-IOT02A_S/List</state>
+          <state>NUCLEO-U575ZI-Q_S/List</state>
         </option>
         <option>
           <name>GEndianMode</name>
@@ -82,7 +82,7 @@
         </option>
         <option>
           <name>OGChipSelectEditMenu</name>
-          <state>STM32U585AI	ST STM32U585AI</state>
+          <state>STM32U575ZI	ST STM32U575ZI</state>
         </option>
         <option>
           <name>GenLowLevelInterface</name>
@@ -142,7 +142,7 @@
         </option>
         <option>
           <name>GFPUDeviceSlave</name>
-          <state>STM32U585AI	ST STM32U585AI</state>
+          <state>STM32U575ZI	ST STM32U575ZI</state>
         </option>
         <option>
           <name>FPU2</name>
@@ -220,7 +220,7 @@
         <debug>1</debug>
         <option>
           <name>CCDefines</name>
-          <state>STM32U585xx</state>
+          <state>STM32U575xx</state>
           <state>USE_HAL_DRIVER</state>
           <state>NDEBUG</state>
           <state>TFM_PARTITION_LOG_LEVEL=3</state>
@@ -258,7 +258,6 @@
           <state>FLOW_CONTROL</state>
           <state>TFM_FIH_PROFILE_ON</state>
           <state>TFM_FIH_PROFILE_HIGH</state>
-          <state>STSAFE_A110</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -438,9 +437,6 @@
           <state>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\Third_Party\trustedfirmware\bl2\ext\mcuboot\include</state>
           <state>$PROJ_DIR$\..\..\TFM_SBSFU_BOOT\Inc</state>
           <state>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\Third_Party\trustedfirmware</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\ST\SE_STSAFEA_API\Core\Inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\ST\SE_STSAFEA_API\Application\MbedTLS\Inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\ST\STSAFE_A1xx\CoreModules\Inc</state>
           <state>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\Third_Party\trustedfirmware\platform\ext\secure_element\stm</state>
         </option>
         <option>
@@ -775,7 +771,7 @@
       <name>BUILDACTION</name>
       <archiveVersion>1</archiveVersion>
       <data>
-        <prebuild>$PROJ_DIR$\prebuild_s.cmd "$PROJ_DIR$" "STM32U585xx"</prebuild>
+        <prebuild>$PROJ_DIR$\prebuild_s.cmd "$PROJ_DIR$" "STM32U575xx"</prebuild>
         <postbuild>cmd /C "cmd /C $PROJ_DIR$\postbuild.bat "$PROJ_DIR$"  "1.0.0" "secure""</postbuild>
       </data>
     </settings>
@@ -800,7 +796,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>B-U585I-IOT02A.out</state>
+          <state>NUCLEO-U575ZI-Q.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
@@ -1645,27 +1641,6 @@
         </file>
       </group>
     </group>
-    <group>
-      <name>stsafe_a</name>
-      <group>
-        <name>stsafe_axx0</name>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\ST\STSAFE_A1xx\CoreModules\Src\stsafea_core.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\ST\STSAFE_A1xx\CoreModules\Src\stsafea_crypto.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\ST\STSAFE_A1xx\CoreModules\Src\stsafea_service.c</name>
-        </file>
-      </group>
-      <group>
-        <name>se_stsafea_api</name>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\ST\SE_STSAFEA_API\Core\Src\se_stsafea_api.c</name>
-        </file>
-      </group>
-    </group>
   </group>
   <group>
     <name>Drivers</name>
@@ -1847,12 +1822,6 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Secure\Src\sha256_alt.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Secure\Src\stsafea_service_interface.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Secure\Src\stsafea_crypto_interface.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Secure\Src\startup_stm32u5xx.c</name>

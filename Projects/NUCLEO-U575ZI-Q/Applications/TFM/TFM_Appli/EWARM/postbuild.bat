@@ -128,8 +128,8 @@ set "key_s=%tfm_key_dir%\root-ec-p256.pem"
 set "key_ns=%tfm_key_dir%\root-ec-p256_1.pem"
 set "key_enc_pub=%tfm_key_dir%\enc-ec256-pub.pem"
 )
-set "tfm_s=%projectdir%\B-U585I-IOT02A_S\Exe\Project.bin"
-set "tfm_ns=%projectdir%\B-U585I-IOT02A_NS\Exe\Project.bin"
+set "tfm_s=%projectdir%\NUCLEO-U575ZI-Q_S\Exe\Project.bin"
+set "tfm_ns=%projectdir%\NUCLEO-U575ZI-Q_NS\Exe\Project.bin"
 :: encrypt option is for init image in swap mode
 if "%encrypted%" == "1" (
 set "encrypt=-E %key_enc_pub% -c"

@@ -33,7 +33,7 @@
 #endif
 
 /* HW accelerators activation in TFM */
-#define TFM_HW_ACCEL_ENABLE
+/* #define TFM_HW_ACCEL_ENABLE */
 
 /**
  * \name SECTION: System support
