@@ -772,7 +772,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild>$PROJ_DIR$\prebuild_s.cmd "$PROJ_DIR$" "STM32U575xx"</prebuild>
-        <postbuild>cmd /C "cmd /C $PROJ_DIR$\postbuild.bat "$PROJ_DIR$"  "1.0.0" "secure""</postbuild>
+        <postbuild>cmd /C "cmd /C $PROJ_DIR$\postbuild.bat "$PROJ_DIR$"  "2.0.0" "secure""</postbuild>
       </data>
     </settings>
     <settings>
@@ -1403,6 +1403,9 @@
           <name>$PROJ_DIR$\..\.\EWARM\g\auto_generated\intermedia_tfm_app_rot.c</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\g\auto_generated\intermedia_tfm_user_app.c</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\Third_Party\trustedfirmware\platform\ext\common\tfm_platform.c</name>
         </file>
         <file>
@@ -1736,6 +1739,9 @@
     <name>Application</name>
     <group>
       <name>User</name>
+      <file>
+        <name>$PROJ_DIR$\..\Secure\Src\tfm_user_app.c</name>
+      </file>
       <file>
         <name>$PROJ_DIR$\..\Secure\Src\low_level_com.c</name>
       </file>

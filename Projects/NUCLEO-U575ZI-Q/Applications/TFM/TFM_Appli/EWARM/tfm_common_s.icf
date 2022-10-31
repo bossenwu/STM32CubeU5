@@ -118,6 +118,12 @@ define block TFM_APP_ROT with alignment = 32 {
         ro object *app_rot*.*
 };
 #endif /* TFM_PARTITION_APP_ROT */
+
+#if defined (TFM_PARTITION_USER_APP)
+define block TFM_USER_APP with alignment = 32 {
+        ro object *user_app*.*
+};
+#endif /* TFM_PARTITION_USER_APP */
     /*
      * This empty, zero long execution region is here to mark the end address
      * of PSA RoT code.
@@ -190,6 +196,12 @@ define block TFM_APP_ROT_DATA with alignment = 32 {
        rw object *app_rot*.*
 };
 #endif /* TFM_PARTITION_APP_ROT */
+
+#if defined (TFM_PARTITION_USER_APP)
+define block TFM_USER_APP_DATA with alignment = 32 {
+       rw object *user_app*.*
+};
+#endif /* TFM_PARTITION_USER_APP */
 
 
 define block TFM_SP_PS_DATA with alignment = 32 {
@@ -367,6 +379,10 @@ define block LR_CODE with fixed order {
        block TFM_APP_ROT,
 #endif /* TFM_PARTITION_APP_ROT */
 
+#ifdef TFM_PARTITION_USER_APP
+       block TFM_USER_APP,
+#endif /* TFM_PARTITION_USER_APP */
+
 #ifdef TFM_PARTITION_TEST_CORE
        block TFM_SP_CORE_TEST_2,
 #endif /* TFM_PARTITION_TEST_CORE */
@@ -405,6 +421,9 @@ define block APP_UNPRIV_DATA with fixed order {
 #ifdef TFM_PARTITION_APP_ROT
     block TFM_APP_ROT_DATA,
 #endif /* TFM_PARTITION_APP_ROT */
+#ifdef TFM_PARTITION_USER_APP
+    block TFM_USER_APP_DATA,
+#endif /* TFM_PARTITION_USER_APP */
     block TFM_SP_PS_DATA,
 
 #ifdef TFM_PARTITION_TEST_CORE
