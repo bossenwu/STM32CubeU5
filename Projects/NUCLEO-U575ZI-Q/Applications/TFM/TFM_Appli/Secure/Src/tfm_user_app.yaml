@@ -21,6 +21,13 @@
       "minor_version": 1,
       "minor_policy": "STRICT"
      },
+    {
+      "name": "TFM_USER_APP_CHGPWD",
+      "sid": "0x00000201",
+      "non_secure_clients": true,
+      "version": 1,
+      "version_policy": "STRICT"
+    },
   ],
   "linker_pattern": {
     "library_list": [
@@ -32,6 +39,14 @@
       "name": "TFM_USER_APP_IOCTL",
       "signal": "TFM_USER_APP_IOCTL_SIG",
       "sid": "0x00000200",
+      "non_secure_clients": true,
+      "version": 1,
+      "version_policy": "STRICT"
+    },
+    {
+      "name": "TFM_USER_APP_CHGPWD",
+      "signal": "TFM_USER_APP_CHGPWD_SIG",
+      "sid": "0x00000201",
       "non_secure_clients": true,
       "version": 1,
       "version_policy": "STRICT"
